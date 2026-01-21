@@ -1,0 +1,29 @@
+# MediaMTX Relay Configuration
+paths:
+  cam:
+    # This allows the Raspberry Pi to publish to this path
+    source: publisher
+
+    # Recording Settings
+    record: yes
+    recordPath: /recordings/%path/%Y-%m-%d_%H-%M-%S_%f
+    recordDeleteAfter: 3d # Optional: Auto-delete files older than 7 days
+
+# Global Settings
+rtmp: yes
+rtmpAddress: :1935
+
+# Output settings (to watch the stream)
+hls: yes
+webrtc: yes
+
+# Optional: Security
+# If you want to prevent others from pushing to your server,
+# you can add a username/password here, but you'd need to
+# update the Pi's URL to: rtmp://user:pass@domain/cam
+
+
+# Global recording settings (Optional: set format)
+recordFormat: fmp4 # 'fmp4' is generally better for modern browsers/VLC
+
+

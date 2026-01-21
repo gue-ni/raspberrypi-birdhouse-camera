@@ -1,0 +1,12 @@
+[Unit]
+Description=MediaMTX RTSP/RTMP Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/mediamtx /srv/mediamtx/mediamtx.yml
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
